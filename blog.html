@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/1d9b9697c1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+ <!-- navbar section -->
+     
+ <nav class="fixed top-0 w-full bg-white text-black flex justify-between items-center px-8 py-4" >
+  <div id="logo" class="text-xl font-bold flex jusstify-center"><a href="index.html">SOLEMATE</a></div>
+  
+  
+  <ul class="hidden md:flex space-x-6 ">
+      <li><a href="index.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-black after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-black">Home</a></li>
+      <li><a href="men.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-black after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-100 hover:text-black">Men</a></li>
+      <li><a href="women.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-black after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-100 hover:text-black">Women</a></li>
+      <li><a href="blog.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-black after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-100 hover:text-black">Blogs</a></li>
+      <li><a href="contact.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-black after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-100 hover:text-black">Contact Us</a></li>
+  </ul>
+   
+  
+
+  <div class="hidden md:block">
+      <i class="fa-solid fa-cart-shopping mr-5"></i>
+      <a href="login.html"><i class="fa-solid fa-user"></i></a>
+    </div>
+  
+  <div id="menu-button" class="md:hidden absolute top-4 right-8 text-2xl cursor-pointer">&#9776;</div>
+  
+</nav>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden fixed top-16 right-0 w-60 bg-white text-black flex flex-col items-center space-y-6 py-5 md:hidden">
+  <a href="index.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-black">Home</a>
+  <a href="men.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-100 hover:text-black">Men</a>
+  <a href="women.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-100 hover:text-black">Women</a>
+  <a href="blog.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-100 hover:text-black">Blogs</a>
+  <a href="contact.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-100 hover:text-black">Contact Us</a>
+</div> 
+    <!-- Hero section -->
+          <header id="hero" class="h-screen flex justify-center items-center w-full text-white text-center bg-cover bg-center" style="background-image: url('assets/pexels-mnzoutfits-1639729.jpg');">
+            <div>
+              <h2 class="text-white  tracking-wider font-bold text-5xl">SOLEMATE</h2>
+              <p class="mt-10 text-[1.6rem] font-bold text-black">Where comfort meets performance and style</p>
+              <a href="#blog" class="bg-gray-300 text-black px-10 py-5 inline-block mt-2 rounded-lg hover:bg-black/40 hover:text-white transition">
+                View More
+            </a>
+            </div>
+        </header>
+
+        <!-- Main -->
+        <div id="blog" class="max-w-4xl mx-auto text-center py-16 px-4">
+          <h2 class="text-4xl font-bold uppercase">we make sure you've got the shoe <br> that best <i class="text-gray-400">fits your style </i></h2>
+          <p class="mt-4 text-lg text-gray-600">
+            When it comes to sneaker stores that effortlessly blend comfort, performance, and street-ready style, <b> Solemate</b> has been at the top of the game for decades. From iconic retro kicks to cutting-edge running shoes, Solemate continues to redefine what it means to wear performance-driven, fashion-forward footwear. Whether you’re hitting the track or stepping up your sneaker rotation, <b> Solemate</b> has got you covered.
+          </p>
+      </div>
+
+      <!-- Mission -->
+       <div class="flex  max-w-8xl gap-8">
+        <img src="assets/pexels-nytheone-1070360.jpg" alt="" class="md:w-[650px] w-full ml-10 rounded-lg" >
+        <div class="text-center md:text-left">
+        <h1 class="uppercase text-3xl font-semibold">our mission</h1>
+        <p class="mt-4 text-lg text-gray-600">
+          "Our mission is to empower individuals to step forward with confidence and style. We are committed to crafting high-quality, innovative footwear that combines comfort, durability, and cutting-edge design. We strive to inspire active lifestyles and promote sustainability by using eco-friendly materials and ethical manufacturing practices. Our goal is to leave a positive footprint on the world, one step at a time."
+        </p>
+        </div>
+       </div>
+
+       <div class="flex gap-8 mt-10 p-4 items-center">
+        <div class="text-center md:text-left md:w-1/2 ml-5 mt-[30]">
+          <h1 class="uppercase text-3xl font-semibold">our history</h1>
+          <p class="mt-4 text-lg text-gray-600">
+            SoleMate was founded in 2025 by a passionate group of footwear enthusiasts and designers who shared a vision of creating shoes that not only looked stylish but also provided unparalleled comfort and support. The brand was born out of a desire to address the common issues faced by shoe wearers, such as discomfort and lack of durability."
+          </p>
+          </div>
+        <img src="assets\pexels-vovkapanda-10084175.jpg" alt="" class="md:w-[750px] w-full md:h-[550px] mr-10 rounded-lg" >
+        
+       </div>
+
+       <!-- Newsletter -->
+       <section class="bg-gray-100 py-16">
+        <div class="max-w-xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-900">Subscribe</h2>
+            <p class="text-gray-600 mt-2">Sign up with your email address to receive news and updates.</p>
+            
+            <form class="mt-6 flex flex-col md:flex-row items-center justify-center">
+                <input required type="email" placeholder="Email Address" 
+                    class="md:w-64 w-full px-4 py-2 border border-gray-300 rounded-md md:rounded-l-md">
+                <button onclick="sub()" type="submit" 
+                    class="px-6 py-2 bg-gray-400 text-white rounded-r-md hover:bg-gray-500 transition ml-5">
+                    Sign Up
+                </button>
+            </form>
+        </div>
+    </section>
+
+         <!-- Footer section -->
+      <footer class="bg-black text-white text-center py-5 border-gold border-t mt-5">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-2 md:grid-cols-4 gap-8 ">
+            <!-- About section -->
+             <div>
+                <h3 class="text-lg font-semibold mb-2">About</h3>
+                <p>We are dedicated to providing you with the best meals in town</p>
+             </div>
+        
+        <!-- Quick links -->
+         <div>
+            <h3 class="text-lg font-semibold mb-2">Quick links</h3>
+            <ul class="space-y-1">
+              <li><a href="index.html" class="text-white hover:underline transition">Home</a></li>
+              <li><a href="men.html" class="text-white hover:underline transition">Men</a></li>
+              <li><a href="women.html" class="text-white hover:underline transition">Women</a></li>
+              <li><a href="blog.html" class="text-white hover:underline transition">Blogs</a></li>
+            </ul>
+         </div>
+         <!-- Contact Section -->
+          <div>
+            <h3 class="text-lg font-semibold mb-2">Contact us:</h3>
+            <p class="text-white">Email: robustian16@gmail.com</p>
+            <p class="text-white">Phone: +254123456789</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-2">Follow Us</h3>
+            <div class="flex justify-center space-x-4">
+              <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+              <a href="https://x.com/?lang=en" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-square-x-twitter"></i></a>
+              <a href="https://www.instagram.com/" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+              <a href="https://ke.linkedin.com/" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+        </div>
+        </div>
+        <!-- Copyright Section -->
+        <div class="mt-0 text-center text-sm">
+          © 2025 <a href="index.html" class="underline">Solemate</a>. All rights reserved.
+      </div>
+        </footer>
+        <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

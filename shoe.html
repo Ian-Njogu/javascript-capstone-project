@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/1d9b9697c1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   <!-- navbar section -->
+     
+   <nav class="fixed top-0 w-full bg-white text-black flex justify-between items-center px-8 py-4" >
+    <div id="logo" class="text-xl font-bold flex jusstify-center"><a href="index.html">SOLEMATE</a></div>
+    
+    
+    <ul class="hidden md:flex space-x-6 ">
+        <li><a href="index.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-black after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-black">Home</a></li>
+        <li><a href="men.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-black after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-100 hover:text-black">Men</a></li>
+        <li><a href="women.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-black after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-100 hover:text-black">Women</a></li>
+        <li><a href="blog.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-black after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-100 hover:text-black">Blogs</a></li>
+        <li><a href="contact.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-black after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-100 hover:text-black">Contact Us</a></li>
+    </ul>
+     
+    
+
+    <div class="hidden md:block">
+        <i class="fa-solid fa-cart-shopping mr-5"></i>
+        <a href="login.html"><i class="fa-solid fa-user"></i></a>
+      </div>
+    
+    <div id="menu-button" class="md:hidden absolute top-4 right-8 text-2xl cursor-pointer">&#9776;</div>
+    
+  </nav>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden fixed top-16 right-0 w-60 bg-white text-black flex flex-col items-center space-y-6 py-5 md:hidden">
+    <a href="index.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-black">Home</a>
+    <a href="men.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-100 hover:text-black">Men</a>
+    <a href="women.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-100 hover:text-black">Women</a>
+    <a href="blog.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-100 hover:text-black">Blogs</a>
+    <a href="contact.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-100 hover:text-black">Contact Us</a>
+ </div> 
+      <div class="flex-row md:flex gap-5  max-w-8xl justify-center">
+        <div class="w-[400px] mt-[100px]">
+            <img src="assets\Screenshot 2025-03-22 095723.png" alt="">
+        </div>
+        <div class="w-[400px] mt-[100px]">
+            <img src="assets\Screenshot 2025-03-22 111023.png" alt="">
+        </div>
+
+        <div>
+            <div class="mt-[200px] text-3xl">
+                <p class="text-gray-500 text-2xl">Asics</p>
+                <h2 class="text-3xl font-bold">GEL-KINETIC FLUENT</h2>
+                <p class="text-gray-400 text-sm">WHITE/WHITE</p>
+                <p class="text-black font-semibold mt-1">3500 KES</p>
+                <p class="text-black font-semibold mt-2 text-lg"><span class="text-gray-400">Shoe size: <br> 39-45</span></p>
+
+                <button onclick="hello()" class="bg-black text-white px-10 py-2 mt-10 rounded-lg border-1 border-red hover:text-black hover:bg-black/50 transition text-sm">ADD TO CART</button>
+            </div>
+
+        </div>
+      </div>
+
+          <!-- Footer section -->
+          <footer class="bg-black text-white text-center py-5 border-gold border-t mt-5">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-2 md:grid-cols-4 gap-8 ">
+                <!-- About section -->
+                 <div>
+                    <h3 class="text-lg font-semibold mb-2">About</h3>
+                    <p>We are dedicated to providing you with the best meals in town</p>
+                 </div>
+            
+            <!-- Quick links -->
+             <div>
+                <h3 class="text-lg font-semibold mb-2">Quick links</h3>
+                <ul class="space-y-1">
+                    <li><a href="index.html" class="text-white hover:underline transition">Home</a></li>
+                    <li><a href="men.html" class="text-white hover:underline transition">Men</a></li>
+                    <li><a href="women.html" class="text-white hover:underline transition">Women</a></li>
+                    <li><a href="blog.html" class="text-white hover:underline transition">Blogs</a></li>
+                </ul>
+             </div>
+             <!-- Contact Section -->
+              <div>
+                <h3 class="text-lg font-semibold mb-2">Contact us:</h3>
+                <p class="text-white">Email: robustian16@gmail.com</p>
+                <p class="text-white">Phone: +254123456789</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold mb-2">Follow Us</h3>
+                <div class="flex justify-center space-x-4">
+                    <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                    <a href="https://x.com/?lang=en" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-square-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    <a href="https://ke.linkedin.com/" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+            <!-- Copyright Section -->
+        <div class="mt-0 text-center text-sm">
+            © 2025 <a href="index.html" class="underline">Solemate</a>. All rights reserved.
+        </div>
+            </footer>
+      
+    
+        </main>
+        <script>
+            function hello() {
+                alert("Shoe added to cart!")
+            }
+        </script>
+    </body>
+    </html>
+</body>
+</html>
