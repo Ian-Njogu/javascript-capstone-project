@@ -14,16 +14,18 @@ function sub() {
     alert("Thank you for subscribing!")
 }
 
+//Elements that need to be declared globally for them to be accessed in different scopes
 const cartIcon = document.querySelector("#cart-icon");
 const cart = document.querySelector(".cart");
 const cartClose = document.querySelector("#cart-close");
+const cartContent = document.querySelector(".cart-content");
 cartIcon.addEventListener("click", () => cart.classList.add("active"));
 cartClose.addEventListener("click", () => cart.classList.remove("active"));
 
-document.addEventListener('DOMContentLoaded', function() {
+
     // Select all add to cart buttons
     const addCartButtons = document.querySelectorAll(".add-cart");
-    
+    // Goes through each add to cart button
     addCartButtons.forEach(button => {
         button.addEventListener('click', function(event) {
             // Get the closest product box
@@ -46,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const cartContent = document.querySelector(".cart-content");
 
-        // Create cart item
+        // Creaing the cart items
         const cartBox = document.createElement("div");
         cartBox.classList.add("cart-box", "flex", "items-center", "mt-5", "p-3", "border-b");
         cartBox.innerHTML = `
@@ -67,10 +69,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         cartContent.appendChild(cartBox);
         
-        // Adding event listeners
+        // Adding event listeners for the buttons in the cart section
         cartBox.querySelector(".remove-item").addEventListener('click', function() {
             cartBox.remove();
-            updateCartTotal();
+            updateCartCount(-1)
+            updateTotalPrice();
         });
         
         
@@ -83,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (quantity > 1) {
                 quantity--;
                 quantityElement.textContent = quantity;
-                updateCartTotal();
+                updateTotalPrice();
             }
         });
         
@@ -91,14 +94,60 @@ document.addEventListener('DOMContentLoaded', function() {
             let quantity = parseInt(quantityElement.textContent);
             quantity++;
             quantityElement.textContent = quantity;
-            updateCartTotal();
+            updateTotalPrice();
         });
         
-        updateCartTotal();
+        updateTotalPrice();
+        updateCartCount(1);
+
     };
 
-    function updateCartTotal() {
+    const totalPriceElement = document.querySelector(".total-price");
+
+    const updateTotalPrice = () => {
+        const cartBoxes = document.querySelectorAll(".cart-box");
+        let total = 0;
+         
+        cartBoxes.forEach(cartBox => {
         
-        console.log("Update cart total");
-    }
-});
+                const priceText = cartBox.querySelector(".cart-price").textContent
+                    
+                const quantity = parseInt(cartBox.querySelector(".number").textContent);
+                
+                total += parseFloat(priceText) * quantity;
+          
+        });
+        
+       
+        totalPriceElement.textContent = `KES ${total.toLocaleString()}`;
+    };
+
+    let cartItemCount = 0; //
+    //Change parameter is used to determine whether the item count increases or decreases
+    const updateCartCount = change => {
+        const cartItemCountBadge = document.querySelector(".cart-item-count");
+        cartItemCount += change; //if change is positive the item count increases and vice versa if negative
+        if(cartItemCount > 0) {
+            cartItemCountBadge.style.visibility = "visible";
+            cartItemCountBadge.textContent = cartItemCount;
+        } else {
+            cartItemCountBadge.style.visibility = "hidden";
+            cartItemCountBadge.textContent = "";
+        }
+    };
+
+    const buyNowButton = document.querySelector(".btn-buy");
+    buyNowButton.addEventListener("click", () => {
+        const cartBoxes = cartContent.querySelectorAll(".cart-box");
+        if (cartBoxes.length === 0) {
+            alert("Your cart is empty. Please add items to the cart before making a purchase");
+            return;
+        }
+        cartBoxes.forEach(cartBox => cartBox.remove());
+        cartItemCount = 0;
+        updateCartCount(0);
+        updateTotalPrice();
+
+        alert("Thank you for your purchase")
+    });
+
