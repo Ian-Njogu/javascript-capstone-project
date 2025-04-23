@@ -6,7 +6,9 @@ const repeatPasswordInput = document.getElementById("repeat-password-input");
 const errorMessage = document.getElementById("error-message")
 
 let users = JSON.parse(localStorage.getItem('users')) || [];
-
+function isUserLoggedIn() {
+    return localStorage.getItem('currentUser') !== null;
+  }
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     
@@ -34,6 +36,7 @@ form.addEventListener("submit", (e) => {
                     password: passwordInput.value
                 });
                 localStorage.setItem('users', JSON.stringify(users));
+                handleSuccessfulLogin();
                 alert("Signup successful! Please login.");
                 window.location.href = "login.html"; // Redirect to login page
             }
@@ -53,19 +56,22 @@ form.addEventListener("submit", (e) => {
                 passwordInput.parentElement.classList.add("incorrect");
             } else {
                 alert("Login successful!");
-            
+                // Store the logged-in user's email
+                localStorage.setItem('currentUser', JSON.stringify(user.email));
                 window.location.href = "index.html"; // Redirect after login
             }
         }
-    }
+    };
+   
     
     if (errors.length > 0) {
         errorMessage.innerText = errors.join(". ");
     } else {
         // If no errors, the form would submit normally
-        // form.submit(); // Uncomment this if you want actual form submission
+
     }
 });
+
 
 //creating an array that will hold the error messages
 function getSignUpFormErrors(firstname, email, password, repeatPassword) {
@@ -92,7 +98,9 @@ if(password.length < 8) {
     passwordInput.parentElement.classList.add("incorrect")
 }
 return errors;
-}
+isUserLoggedIn()
+};
+
 function getLoginFormErrors(email, password) {
     let errors = []
     if(email === "" || email == null){
@@ -115,4 +123,54 @@ allInputs.forEach(input => {
         }
        
     })
+    isUserLoggedIn()
 });
+
+function handleSuccessfulLogin() {
+    // Check for pending cart
+    const pendingCart = JSON.parse(localStorage.getItem('pendingCart'));
+    const pendingAction = localStorage.getItem('pendingAction');
+    
+    if (pendingAction === 'checkout' && pendingCart) {
+        localStorage.removeItem('pendingCart');
+        localStorage.removeItem('pendingAction');
+        
+        // Clear existing cart first
+        document.querySelectorAll(".cart-box").forEach(box => box.remove());
+        cartItemCount = 0;
+        updateCartCount(0);
+        
+        // Restore the cart
+        pendingCart.forEach(item => {
+            // Create a mock productBox element
+            const mockProductBox = document.createElement('div');
+            mockProductBox.innerHTML = `
+                <div class="product-box">
+                    <div class="img-box">
+                        <img src="${item.imgSrc}" alt="${item.imgAlt}">
+                    </div>
+                    <h2 class="product-title">${item.title}</h2>
+                    <span class="price">${item.price}</span>
+                    <p class="text-gray-500">Sample Brand</p>
+                    <p class="text-gray-400">Sample Color</p>
+                </div>
+            `;
+            
+            // Add each item to cart
+            addToCart(mockProductBox.querySelector(".product-box"));
+            
+            // Set correct quantity
+            const cartBoxes = document.querySelectorAll(".cart-box");
+            const lastBox = cartBoxes[cartBoxes.length - 1];
+            if (lastBox) {
+                lastBox.querySelector(".number").textContent = item.quantity;
+            }
+        });
+        
+        updateTotalPrice();
+        
+        // Show cart and prompt user
+        cart.classList.add("active");
+        alert("Your cart has been restored. Please complete your purchase");
+    }
+};

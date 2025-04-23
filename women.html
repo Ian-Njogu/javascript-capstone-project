@@ -18,6 +18,88 @@
             background-size: cover;
             background-position: center;
         }
+        #cart-icon {
+         position: relative;
+         display: flex;
+         font-size: 20px;
+         cursor: pointer;
+        }
+        #cart-icon .cart-item-count {
+            position: absolute;
+            top: 0;
+            right: -6px;
+            width: 10px;
+            height: 10px;
+            background: rgb(255, 166, 0);
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            padding: 7px;
+        }
+        .cart {
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+            padding: 65px 20px 40px;
+            transition: 0.5s;
+            
+        }
+        .cart.active {
+            right: 0;
+        }
+        .cart-quantity {
+            display: flex;
+            width: 100px;
+            border: 1px solid #999;
+            border-radius: 6px;
+        }
+        .cart-quantity button {
+            background: transparent;
+            width: 30px;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .cart-quantity .number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            border: 1px solid #999;
+            cursor: default;
+        }
+        .total {
+            border-top: 1px solid #333
+        }
+        .btn-buy {
+            border-radius: 6px;
+            padding: 10px 30px;
+            margin: 20px auto 0;
+        }
+        #search-results a {
+        text-decoration: none;
+        color: inherit;
+        }
+
+        #search-results::-webkit-scrollbar {
+        width: 8px;
+        }
+
+        #search-results::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 0 4px 4px 0;
+        }
+
+        #search-results::-webkit-scrollbar-thumb {
+          background: #888;
+          border-radius: 4px;
+        }
+        
+        #search-results::-webkit-scrollbar-thumb:hover {
+          background: #555;
+        }
+    
     </style>
 </head>
 <body>
@@ -35,12 +117,10 @@
         <li><a href="contact.html" class="hover:white transition relative after:content-[''] after:block after:h-0.5 after:w-full after:bg-black after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-100 hover:text-black">Contact Us</a></li>
     </ul>
      
-    
-
-    <div class="hidden md:block">
-        <i class="fa-solid fa-cart-shopping mr-5"></i>
-        <a href="login.html"><i class="fa-solid fa-user"></i></a>
-      </div>
+    <div id="cart-icon" class="hidden md:block">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-item-count"></span>
+    </div>
     
     <div id="menu-button" class="md:hidden absolute top-4 right-8 text-2xl cursor-pointer">&#9776;</div>
     
@@ -63,74 +143,101 @@
      <main>
         <h1 class="uppercase font-bold text-2xl mt-5">footwear for women</h1>
        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  max-w-8xl gap-5">
-        <div class="bg-white hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
-            <img src="assets\Screenshot 2025-03-22 191300.png" alt="" class="">
+        <div class="product-box hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
+            <img src="assets\Screenshot 2025-03-22 191300.png" alt="" class="img-box">
             <div class="mt-4">
                 <p class="text-gray-500 text-sm">Nike</p>
-                <h2 class="text-lg font-bold">AIR DUNK LOW JUMBO</h2>
+                <h2 class="product-title font-bold">AIR DUNK LOW JUMBO</h2>
                 <p class="text-gray-400 text-sm">PHANTOM/CHLOROPHYLL</p>
-                <p class="text-black font-semibold mt-1">3500 KES</p>
+                <p class="price font-semibold mt-1">3500 KES</p>
                 <i class="add-cart fa-solid fa-cart-shopping ml-[250px] p-[10px] text-[20px] bg-orange-500 text-white rounded-lg" ></i>
             </div>
         </div>
 
-        <div class="bg-white hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
-            <img src="assets\Screenshot 2025-03-22 191345.png" alt="" class="">
+        <div class="product-box hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
+            <img src="assets\Screenshot 2025-03-22 191345.png" alt="" class="img-box">
             <div class="mt-4">
                 <p class="text-gray-500 text-sm">Adidas</p>
-                <h2 class="text-lg font-bold">GEL-1130 NS</h2>
+                <h2 class="product-title font-bold">GEL-1130 NS</h2>
                 <p class="text-gray-400 text-sm">CREAM/CARBON</p>
-                <p class="text-black font-semibold mt-1">5500 KES</p>
+                <p class="price text-black font-semibold mt-1">5500 KES</p>
                 <i class="add-cart fa-solid fa-cart-shopping ml-[250px] p-[10px] text-[20px] bg-orange-500 text-white rounded-lg" ></i>
             </div>
         </div>
 
-        <div class="bg-white hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
-            <img src="assets\Screenshot 2025-03-22 193114.png" alt="" class="">
+        <div class="product-box hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
+            <img src="assets\Screenshot 2025-03-22 193114.png" alt="" class="img-box">
             <div class="mt-4">
                 <p class="text-gray-500 text-sm">Nike</p>
-                <h2 class="text-lg font-bold">Air Jordan 1 MS</h2>
+                <h2 class="product-title font-bold">Air Jordan 1 MS</h2>
                 <p class="text-gray-400 text-sm">WHITE/WHITE</p>
-                <p class="text-black font-semibold mt-1">6500 KES</p>
+                <p class="img-box font-semibold mt-1">6500 KES</p>
                 <i class="add-cart fa-solid fa-cart-shopping ml-[250px] p-[10px] text-[20px] bg-orange-500 text-white rounded-lg" ></i>
             </div>
         </div>
 
         <div class="bg-white hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
-            <img src="assets\Screenshot 2025-03-22 193256.png" alt="" class="">
+            <img src="assets\Screenshot 2025-03-22 193256.png" alt="" class="img-box">
             <div class="mt-4">
                 <p class="text-gray-500 text-sm">Nike</p>
-                <h2 class="text-lg font-bold">SL 72 RS</h2>
+                <h2 class="product-title font-bold">SL 72 RS</h2>
                 <p class="text-gray-400 text-sm">CLOUD WHITE</p>
-                <p class="text-black font-semibold mt-1">3500 KES</p>
+                <p class="price font-semibold mt-1">3500 KES</p>
                 <i class="add-cart fa-solid fa-cart-shopping ml-[250px] p-[10px] text-[20px] bg-orange-500 text-white rounded-lg" ></i>
             </div>
         </div>
 
-        <div class="bg-white hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
-            <img src="assets\Screenshot 2025-03-22 193559.png" alt="" class="">
+        <div class="product-box hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
+            <img src="assets\Screenshot 2025-03-22 193559.png" alt="" class="img-box">
             <div class="mt-4">
                 <p class="text-gray-500 text-sm">Nike</p>
-                <h2 class="text-lg font-bold">DUNK LOW RETRO</h2>
+                <h2 class="product-title font-bold">DUNK LOW RETRO</h2>
                 <p class="text-gray-400 text-sm">BRIGHT CERAMIC</p>
-                <p class="text-black font-semibold mt-1">6500 KES</p>
+                <p class="price font-semibold mt-1">6500 KES</p>
                 <i class="add-cart fa-solid fa-cart-shopping ml-[250px] p-[10px] text-[20px] bg-orange-500 text-white rounded-lg" ></i>
             </div>
         </div>
 
-        <div class="bg-white hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
-            <img src="assets\Screenshot 2025-03-22 172424.png" alt="" class="">
+        <div class="product-box hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
+            <img src="assets\Screenshot 2025-03-22 172424.png" alt="" class="img-box">
             <div class="mt-4">
                 <p class="text-gray-500 text-sm">New Balance</p>
-                <h2 class="text-lg font-bold">410</h2>
+                <h2 class="product-title font-bold">410</h2>
                 <p class="text-gray-400 text-sm">GRAY GOLD</p>
-                <p class="text-black font-semibold mt-1">7500 KES</p>
+                <p class="price font-semibold mt-1">7500 KES</p>
                 <i class="add-cart fa-solid fa-cart-shopping ml-[250px] p-[10px] text-[20px] bg-orange-500 text-white rounded-lg" ></i>
             </div>
         </div>
 
 
        </div>
+
+       <!-- Cart -->
+       <div class="cart fixed top-0 right-[-100%] w-[360px] h-[100%] bg-white z-100 overflow-auto">
+        <h2 class="cart-title text-center text-[30px]">Your cart</h2>
+        <div class="cart-content">
+            <!-- <div class="cart-box flex items-center mt-[20px]">
+                <img class="w-100[px] h-[100px] object-cover mr-[20px] " src="assets\pexels-bemistermister-3490360.jpg" alt="">
+                <div class="cart-detail grid gap-[8px] mr-auto">
+                    <h2 class="cart-product-title text-[16px] leading-1">Casual</h2>
+                    <span class="cart-price font-semibold">kes 100</span>
+                    <div class="cart-quantity flex w-[100px] ">
+                        <button id="decrement">-</button>
+                        <span class="number">1</span>
+                        <button id="increment">+</button>
+                    </div>
+                </div>
+                <i class="fa-solid fa-trash text-[20px] cursor-pointer"></i>
+            </div> -->
+        </div>
+        <div class="total flex justify-end items-center text-[18px] mt-[20px]">
+            <div class="total-title">total</div>
+            <div class="total-price ml-[10px] font-semibold">kes 0</div>
+        </div>
+        <button class="btn-buy block bg-orange-500 border-none text-[16px] text-white cursor-pointer">Buy now</button>
+        <i class="fa-solid fa-xmark absolute top-[20px] right-[15px] text-[35px] cursor-pointer" id="cart-close"></i>
+        
+      </div>
 
          <!-- Footer section -->
       <footer class="bg-black text-white text-center py-5 border-gold border-t mt-5">
