@@ -141,76 +141,95 @@
 
     <!-- Footwear for women -->
      <main>
-        <h1 class="uppercase font-bold text-2xl mt-5">footwear for women</h1>
-       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  max-w-8xl gap-5">
-        <div class="product-box hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
-            <img src="assets\Screenshot 2025-03-22 191300.png" alt="" class="img-box">
-            <div class="mt-4">
+        <div class="justify-between flex flex-wrap">
+            <h1 class="uppercase font-bold text-2xl mt-5">footwear for women</h1>
+            <div class="flex w-full md:w-72 p-4">
+                <div class="hidden md:flex items-center mx-4 flex-1 max-w-md">
+                    <div class="relative w-full">
+                      <input 
+                        type="text" 
+                        id="main-search" 
+                        placeholder="Search shoes, brands..." 
+                        class="w-full border border-black p-2 pl-4 pr-10 text-black rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+                        aria-label="Search products"
+                      >
+                      <button id="search-button" class="absolute right-2 top-1/2 transform -translate-y-1/2">
+                        <i class="fa-solid fa-search"></i>
+                      </button>
+                      <div id="search-results" class="absolute z-50 w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg hidden max-h-96 overflow-y-auto"></div>
+                    </div>
+                  </div>
+              </div>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-8xl gap-5">
+            <div class="product-box relative hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
+              <img src="assets/Screenshot 2025-03-22 191300.png" alt="" class="img-box">
+              <div class="mt-4">
                 <p class="text-gray-500 text-sm">Nike</p>
                 <h2 class="product-title font-bold">AIR DUNK LOW JUMBO</h2>
                 <p class="text-gray-400 text-sm">PHANTOM/CHLOROPHYLL</p>
                 <p class="price font-semibold mt-1">3500 KES</p>
-                <i class="add-cart fa-solid fa-cart-shopping ml-[250px] p-[10px] text-[20px] bg-orange-500 text-white rounded-lg" ></i>
+              </div>
+              <i class="add-cart fa-solid fa-cart-shopping absolute bottom-4 right-4 p-2 text-[20px] bg-orange-500 text-white rounded-lg"></i>
             </div>
-        </div>
-
-        <div class="product-box hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
-            <img src="assets\Screenshot 2025-03-22 191345.png" alt="" class="img-box">
-            <div class="mt-4">
+          
+            <div class="product-box relative hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
+              <img src="assets/Screenshot 2025-03-22 191345.png" alt="" class="img-box">
+              <div class="mt-4">
                 <p class="text-gray-500 text-sm">Adidas</p>
                 <h2 class="product-title font-bold">GEL-1130 NS</h2>
                 <p class="text-gray-400 text-sm">CREAM/CARBON</p>
                 <p class="price text-black font-semibold mt-1">5500 KES</p>
-                <i class="add-cart fa-solid fa-cart-shopping ml-[250px] p-[10px] text-[20px] bg-orange-500 text-white rounded-lg" ></i>
+              </div>
+              <i class="add-cart fa-solid fa-cart-shopping absolute bottom-4 right-4 p-2 text-[20px] bg-orange-500 text-white rounded-lg"></i>
             </div>
-        </div>
-
-        <div class="product-box hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
-            <img src="assets\Screenshot 2025-03-22 193114.png" alt="" class="img-box">
-            <div class="mt-4">
+          
+            <div class="product-box relative hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
+              <img src="assets/Screenshot 2025-03-22 193114.png" alt="" class="img-box">
+              <div class="mt-4">
                 <p class="text-gray-500 text-sm">Nike</p>
                 <h2 class="product-title font-bold">Air Jordan 1 MS</h2>
                 <p class="text-gray-400 text-sm">WHITE/WHITE</p>
                 <p class="img-box font-semibold mt-1">6500 KES</p>
-                <i class="add-cart fa-solid fa-cart-shopping ml-[250px] p-[10px] text-[20px] bg-orange-500 text-white rounded-lg" ></i>
+              </div>
+              <i class="add-cart fa-solid fa-cart-shopping absolute bottom-4 right-4 p-2 text-[20px] bg-orange-500 text-white rounded-lg"></i>
             </div>
-        </div>
-
-        <div class="bg-white hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
-            <img src="assets\Screenshot 2025-03-22 193256.png" alt="" class="img-box">
-            <div class="mt-4">
+          
+            <div class="product-box relative bg-white hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
+              <img src="assets/Screenshot 2025-03-22 193256.png" alt="" class="img-box">
+              <div class="mt-4">
                 <p class="text-gray-500 text-sm">Nike</p>
                 <h2 class="product-title font-bold">SL 72 RS</h2>
                 <p class="text-gray-400 text-sm">CLOUD WHITE</p>
                 <p class="price font-semibold mt-1">3500 KES</p>
-                <i class="add-cart fa-solid fa-cart-shopping ml-[250px] p-[10px] text-[20px] bg-orange-500 text-white rounded-lg" ></i>
+              </div>
+              <i class="add-cart fa-solid fa-cart-shopping absolute bottom-4 right-4 p-2 text-[20px] bg-orange-500 text-white rounded-lg"></i>
             </div>
-        </div>
-
-        <div class="product-box hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
-            <img src="assets\Screenshot 2025-03-22 193559.png" alt="" class="img-box">
-            <div class="mt-4">
+          
+            <div class="product-box relative hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
+              <img src="assets/Screenshot 2025-03-22 193559.png" alt="" class="img-box">
+              <div class="mt-4">
                 <p class="text-gray-500 text-sm">Nike</p>
                 <h2 class="product-title font-bold">DUNK LOW RETRO</h2>
                 <p class="text-gray-400 text-sm">BRIGHT CERAMIC</p>
                 <p class="price font-semibold mt-1">6500 KES</p>
-                <i class="add-cart fa-solid fa-cart-shopping ml-[250px] p-[10px] text-[20px] bg-orange-500 text-white rounded-lg" ></i>
+              </div>
+              <i class="add-cart fa-solid fa-cart-shopping absolute bottom-4 right-4 p-2 text-[20px] bg-orange-500 text-white rounded-lg"></i>
             </div>
-        </div>
-
-        <div class="product-box hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
-            <img src="assets\Screenshot 2025-03-22 172424.png" alt="" class="img-box">
-            <div class="mt-4">
+          
+            <div class="product-box relative hover:cursor-pointer rounded-lg p-4 hover:shadow-lg transition-shadow">
+              <img src="assets/Screenshot 2025-03-22 172424.png" alt="" class="img-box">
+              <div class="mt-4">
                 <p class="text-gray-500 text-sm">New Balance</p>
                 <h2 class="product-title font-bold">410</h2>
                 <p class="text-gray-400 text-sm">GRAY GOLD</p>
                 <p class="price font-semibold mt-1">7500 KES</p>
-                <i class="add-cart fa-solid fa-cart-shopping ml-[250px] p-[10px] text-[20px] bg-orange-500 text-white rounded-lg" ></i>
+              </div>
+              <i class="add-cart fa-solid fa-cart-shopping absolute bottom-4 right-4 p-2 text-[20px] bg-orange-500 text-white rounded-lg"></i>
             </div>
-        </div>
-
-
-       </div>
+          </div>
+          
 
        <!-- Cart -->
        <div class="cart fixed top-0 right-[-100%] w-[360px] h-[100%] bg-white z-100 overflow-auto">
